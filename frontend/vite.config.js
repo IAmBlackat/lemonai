@@ -44,8 +44,11 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       strictPort: true,
 
-      // ✅ Add this section to allow your custom host
-      allowedHosts: ['lemon.ffstudios.io'],
+      // ✅ For newer Vite versions (v6+)
+      originAllowList: ['lemon.ffstudios.io', 'localhost', '127.0.0.1'],
+
+      // ✅ For backward compatibility (keep both)
+      allowedHosts: ['lemon.ffstudios.io', 'localhost', '127.0.0.1'],
 
       proxy: {
         '/api': {
